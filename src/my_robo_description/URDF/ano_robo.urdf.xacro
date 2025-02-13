@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ano_robo">
+
+    <!--find 加包名字-->
+    <xacro:include filename="$(find my_robo_description)/URDF/base.urdf.xacro"/>
+
+    <!--传感器组建-->
+    <xacro:include filename="$(find my_robo_description)/URDF/sensor/camera.urdf.xacro"/>
+    <xacro:include filename="$(find my_robo_description)/URDF/sensor/imu.urdf.xacro"/>
+    <xacro:include filename="$(find my_robo_description)/URDF/sensor/lidar.urdf.xacro"/>
+    <!--执行部分  2个轮子 2个万向轮-->
+    <xacro:include filename="$(find my_robo_description)/URDF/body_/wheel.urdf.xacro"/>
+    <xacro:include filename="$(find my_robo_description)/URDF/body_/wheel_wangxianglun.urdf.xacro"/>
+
+
+    <xacro:base_xacro length="0.12" radius="0.1"/>
+    <!--传感器-->
+    <xacro:imu_xacro xyz="0 0 0.02"/>
+    <xacro:lidar_xacro xyz="0 0 0.1"/>
+    <xacro:camera_xacro xyz="0.1 0 0.075"/>
+    <xacro:wheel_xacro wheel_name="left_wheel" xyz="0 0.1 -0.06"/>
+    <xacro:wheel_xacro wheel_name="right_wheel" xyz="0 -0.1 -0.06"/>
+    <xacro:wheel_wangxianglun_xacro wheel_wangxianglun_name="right_wangxianglun_name" xyz="0.08 0 -0.076"/>
+    <xacro:wheel_wangxianglun_xacro wheel_wangxianglun_name="left_wangxianglun_name" xyz="-0.08 0 -0.076"/>
+
+</robot>
+
+
+
+
+
+
+
+

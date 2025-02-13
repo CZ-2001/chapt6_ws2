@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <xacro:include filename="$(find my_robo_description)/URDF/common_interia.xacro"/>
+
+    <!-- 定义 imu_link 宏 -->
+    <xacro:macro name="wheel_wangxianglun_xacro" params="wheel_wangxianglun_name xyz">
+        <!-- 机器人IMU 部件 惯性测量单元传感器 -->
+        <link name="${wheel_wangxianglun_name}_link">
+            <!-- 部件的外观描述 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <!-- box 自己自动生成的 正方体 -->
+                    <sphere radius="0.016"/>  <!--球体 半径为0.016-->
+                </geometry>
+                <!-- 材质 颜色描述 -->
+                <material name="yellow">
+                    <!-- 设置透明为 0.5 -->
+                    <color rgba="0.5 1.0 0.2 0.8"/>
+                </material>
+            </visual>
+            <collision>
+                <!-- 沿着自己几何中心的偏移旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <!-- box 自己自动生成的 正方体 -->
+                    <sphere radius="0.016"/>  <!--球体 半径为0.016-->
+                </geometry>
+                <!-- 材质 颜色描述 -->
+                <material name="yellow">
+                    <!-- 设置透明为 0.5 -->
+                    <color rgba="0.5 1.0 0.2 0.8"/>
+                </material>
+            </collision>
+            <xacro:sphere_interial m="0.05" r="0.016"/>
+
+        </link>
+        <!-- 机器人的关节 用于组合机器人的部件 -->
+        <joint name="${wheel_wangxianglun_name}_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="${wheel_wangxianglun_name}_link"/>
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+            <axis xyz="0 1 0"/>
+        </joint>
+         <gazebo reference ="${wheel_wangxianglun_name}_joint">
+            <mu1 value="0.0"/>
+            <mu2 value="0.0"/>
+            <kp value="1000000000.0"/>
+            <kd value="1.0"/>
+            <material>Gazebo/Green</material>
+        </gazebo>     
+
+
+    </xacro:macro>
+</robot>

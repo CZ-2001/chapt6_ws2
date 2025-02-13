@@ -1,0 +1,9 @@
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/uninstall.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/my_robo_description_uninstall.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/test.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/edit_cache.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/list_install_components.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/install.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/install/local.dir
+/home/ubuntu/chapt6/chapt6_ws/build/my_robo_description/CMakeFiles/install/strip.dir

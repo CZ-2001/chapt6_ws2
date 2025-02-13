@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robo">
+    <!-- 定义 base_link 宏 -->
+    <xacro:macro name="base_link" params="length radius">
+        <!-- 机器人的身体部分 -->
+        <link name="base_link">
+            <!-- 部件的外观描述 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <!-- 圆柱体 半径0.1 高度 0.12 -->
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+                <!-- 材质 颜色描述 -->
+                <material name="white">
+                    <!-- 设置透明为 0.5 -->
+                    <color rgba="1.0 1.0 1.0 0.5"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+
+    <!-- 定义 imu_link 宏 -->
+    <xacro:macro name="imu_link" params="imu_name xyz">
+        <!-- 机器人IMU 部件 惯性测量单元传感器 -->
+        <link name="${imu_name}">
+            <!-- 部件的外观描述 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <!-- box 自己自动生成的 正方体 -->
+                    <box size="0.02 0.02 0.02"/>
+                </geometry>
+                <!-- 材质 颜色描述 -->
+                <material name="red">
+                    <!-- 设置透明为 0.5 -->
+                    <color rgba="1.0 0.0 0.0 0.5"/>
+                </material>
+            </visual>
+        </link>
+        <!-- 机器人的关节 用于组合机器人的部件 -->
+        <joint name="${imu_name}_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="${imu_name}"/>
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+        </joint>
+    </xacro:macro>
+
+    <!-- 调用 base_link 宏 -->
+    <xacro:base_link length="0.12" radius="0.1"/>
+
+    <!-- 调用 imu_link 宏 -->
+    <xacro:imu_link imu_name="imu_up" xyz="0 0 0.03"/>
+    <xacro:imu_link imu_name="imu_down" xyz="0 0 -0.03"/>
+    <xacro:imu_link imu_name="imu_up2" xyz="0 0 0.08"/>
+    <xacro:imu_link imu_name="imu_down2" xyz="0 0 -0.08"/>
+</robot>

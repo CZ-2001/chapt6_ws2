@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot name="my_robo">
+    <!--机器人的身体部分-->
+    <link name="base_link">
+        <!--部件的外观描述-->   
+        <visual>
+           <!--沿着自己几何中心的偏移旋转量-->
+           <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> 
+           <!--几何形状-->
+           <geometry>
+                <!--box 自己自动生成的 正方体-->
+                <!--圆柱体 半径0.1 高度 0.12-->
+                <cylinder radius="0.1" length="0.12"/>  <!--2个参数 第一个 半径 第二个 高度-->
+           </geometry>  
+           <!--材质 颜色描述-->
+           <material name="white">
+            <!--设置透明为 0.5的原因是要把一个东西放入base_link中-->
+            <color rgba="1.0 1.0 1.0 0.5"/><!--红绿蓝 3个 值的1范围 0-1.0   最后一个参数指的是透明-->
+           </material>
+        </visual>     
+    </link>
+
+<!--机器人IMU 部件 惯性测量单元传感器-->
+
+    <!--机器人的身体部分-->
+    <link name="imu_link">
+        <!--部件的外观描述-->   
+        <visual>
+           <!--沿着自己几何中心的偏移旋转量-->
+           <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> 
+           <!--几何形状-->
+           <geometry>
+                <box size="0.02 0.02 0.02"/>
+                <!--box 自己自动生成的 正方体-->
+           </geometry>  
+           <!--材质 颜色描述-->
+           <material name="red">
+            <!--设置透明为 0.5的原因是要把一个东西放入base_link中-->
+            <color rgba="0.0 0.0 0.0 0.5"/><!--红绿蓝 3个 值的1范围 0-1.0   最后一个参数指的是透明-->
+           </material>
+        </visual>     
+    </link>
+    <!--机器人的关节 用于组合机器人的部件-->
+    <joint name="imu_joint" type="fixed">  <!--表示固定死的-->
+        <parent link="base_link"/> <!--父类-->
+        <child link="imu_link"/>  <!--子类-->
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+    </joint>
+</robot>
+
+
