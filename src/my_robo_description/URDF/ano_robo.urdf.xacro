@@ -11,6 +11,9 @@
     <!--执行部分  2个轮子 2个万向轮-->
     <xacro:include filename="$(find my_robo_description)/URDF/body_/wheel.urdf.xacro"/>
     <xacro:include filename="$(find my_robo_description)/URDF/body_/wheel_wangxianglun.urdf.xacro"/>
+    <!--插件-->
+    <xacro:include filename="$(find my_robo_description)/URDF/plugins/gazebo_control_plugin.xacro"/>
+    <xacro:include filename="$(find my_robo_description)/URDF/plugins/gazebo_sensor_plugin.xacro"/>
 
 
     <xacro:base_xacro length="0.12" radius="0.1"/>
@@ -22,7 +25,8 @@
     <xacro:wheel_xacro wheel_name="right_wheel" xyz="0 -0.1 -0.06"/>
     <xacro:wheel_wangxianglun_xacro wheel_wangxianglun_name="right_wangxianglun_name" xyz="0.08 0 -0.076"/>
     <xacro:wheel_wangxianglun_xacro wheel_wangxianglun_name="left_wangxianglun_name" xyz="-0.08 0 -0.076"/>
-
+    <xacro:gazebo_control_plugin />
+    <xacro:gazebo_sensor_plugin />
 </robot>
 
 
