@@ -3,6 +3,7 @@
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/sensor/camera.urdf.xacro
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/sensor/lidar.urdf.xacro
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/sensor/imu.urdf.xacro
+/home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/ano_robo_gazebo_ros2_cotrol.xacro
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/body_/wheel_wangxianglun.urdf.xacro
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/body_/wheel.urdf.xacro
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/my_robo.urdf
@@ -14,6 +15,7 @@
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/my_robo.pdf
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/common_interia.xacro
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/URDF/ano_robo.urdf.xacro
+/home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/config/CHENZHIGazeBorobo.yaml
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/config/display_robot_model.rviz
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/world/room/model.config
 /home/ubuntu/chapt6/chapt6_ws/install/my_robo_description/share/my_robo_description/world/room/model.sdf
